@@ -2,6 +2,7 @@
 
 Add a christmas snowflake to your site
 给你的网站添加一个圣诞雪花
+
 ## usage
 
 ```html
@@ -50,6 +51,6 @@ var snow = new Snow({
 
 [http://caibaojian.com/demo/2016/10/snow.html](http://caibaojian.com/demo/2016/10/snow.html)
 
-## Liscen
+## LICENSE
 
 MIT
