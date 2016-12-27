@@ -59,6 +59,7 @@
         // Set 1 for all-over-snowing, set 2 for left-side-snowing
         // Set 3 for center-snowing, set 4 for right-side-snowing
         this.snowingzone = option.snowingzone || 1;
+        this.showSnow = option.showSnow !== undefined ? option.showSnow : true;
         ///////////////////////////////////////////////////////////////////////////
         this.snow = new Array();
         this.marginbottom;
@@ -75,7 +76,7 @@
         this.browserok = this.ie5 || this.ns6 || this.opera;
 
         //start snow
-        this.startSnow();
+        if(this.showSnow) this.startSnow();
     }
 
     Snow.prototype.randommaker = function(range) {
@@ -145,9 +146,8 @@
                 this.snow[i].posy = 0;
             }
         }
-        // var timer=setTimeout("movesnow()",50);
         var that = this;
-        var timer = window.setTimeout(function() {
+        this.snowTimer = window.setTimeout(function() {
             that.movesnow();
         },
         50);
@@ -160,6 +160,7 @@
             _html+='<span id="s'+ i +'" style="position:absolute;top:-'+ this.snowmaxsize +'">'+ this.snowletter +'</span>';
         }
         fragment.innerHTML = _html;
+        this.fragment = fragment;
         body.appendChild(fragment);
     }
     Snow.prototype.startSnow = function() {
@@ -167,6 +168,12 @@
         if (this.browserok) {
             this.initsnow();
         }
+    }
+    Snow.prototype.removeSnow = function(){
+        var body = document.getElementsByTagName('body')[0];
+        body.removeChild(this.fragment);
+        clearTimeout(this.snowTimer);
+        this.snowTimer= null;
     }
 
     /**
