@@ -43,9 +43,17 @@ var snow = new Snow({
     //设置雪花的区域
     //1 为所有地方 2 为左边区域
     //3 为中间区域 4 为右边区域
-    snowingzone:1
+    snowingzone:1,
+    //显示雪花
+    showSnow:true
 });
 
+```
+## 方法
+
+移除雪花
+```javascript
+removeSnow();
 ```
 ## demo
 
