@@ -1,4 +1,4 @@
-# xmas-snow
+# [xmas-snow](https://github.com/kujian/xmas-snow)
 
 Add a christmas snowflake to your site
 给你的网站添加一个圣诞雪花
