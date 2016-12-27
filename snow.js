@@ -153,16 +153,14 @@
         50);
     }
     Snow.prototype.createSnow = function() {
-        var body = document.getElementsByTagName('body')[0];
+        var body = document.getElementsByTagName('body')[0],
+            fragment = document.createElement('div'),
+            _html='';
         for (var i = 0; i <= this.snowmax; i++) {
-            var content = document.createElement("span");
-            content.id = 's' + i;
-            content.style.position = "absolute";
-            content.style.top = "-" + this.snowmaxsize;
-            content.innerHTML = this.snowletter;
-            body.appendChild(content);
-            // document.write("<span id='s"+i+"' style='position:absolute;top:-"+snowmaxsize+"'>"+snowletter+"</span>")
+            _html+='<span id="s'+ i +'" style="position:absolute;top:-'+ this.snowmaxsize +'">'+ this.snowletter +'</span>';
         }
+        fragment.innerHTML = _html;
+        body.appendChild(fragment);
     }
     Snow.prototype.startSnow = function() {
         this.createSnow();
@@ -180,6 +178,6 @@
     };
 
     // Export
-    Snow.version = '1.0.1';
+    Snow.version = '1.0.2';
     return Snow;
 });
