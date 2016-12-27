@@ -51,10 +51,15 @@ var snow = new Snow({
 ```
 ## 方法
 
-移除雪花
+#### removeSnow();
+
+移除正在运行的雪花
+
 ```javascript
-removeSnow();
+var snow = new Snow();
+snow.removeSnow();
 ```
+
 ## demo
 
 [http://caibaojian.com/demo/2016/10/snow.html](http://caibaojian.com/demo/2016/10/snow.html)
