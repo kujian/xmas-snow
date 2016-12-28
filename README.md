@@ -11,6 +11,22 @@ Add a christmas snowflake to your site
 var snow = new Snow();
 </script>
 ```
+To import snow.js using an awesome module loader:
+
+```javascript
+// Using CommonJS
+var Snow = require('snow.js')
+var mySnow = new Snow({...})
+
+// ES6
+import Snow from 'snow.js'
+let mySnow = new Snow({...})
+
+// Using requirejs
+require(['path/to/Snow'], function(Snow){
+ var mySnow = new Snow({...})
+})
+```
 
 # option
 
